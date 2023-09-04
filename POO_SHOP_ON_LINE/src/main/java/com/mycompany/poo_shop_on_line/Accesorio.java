@@ -1,53 +1,22 @@
-
 package com.mycompany.poo_shop_on_line;
 
 import javax.swing.JOptionPane;
 
+// La clase Accesorio extiende de Producto e implementa la interfaz Interfas.
+public class Accesorio extends Producto implements Interfas {
+    private String metal; // Tipo de metal del accesorio.
+    private int gramo; // Peso en gramos del accesorio.
 
-
-public class Accesorio extends Producto implements Interfas{
-    private String metal;
-    private int gramo;
-    public Accesorio(String desc,double precio, String m, int g) {
-        super(desc,precio);
-        this.metal = m;
-        this.gramo = g;
-    } 
-
-    public String getMetal() {
-        return metal;
+    // Constructor de la clase Accesorio.
+    public Accesorio(String desc, double precio, String m, int g) {
+        super(desc, precio); // Llama al constructor de la clase base Producto.
+        this.metal = m; // Inicializa el tipo de metal.
+        this.gramo = g; // Inicializa el peso en gramos.
     }
 
-    public void setMetal(String metal) {
-        this.metal = metal;
-    }
+    // Métodos getters y setters para metal, gramo, desc y codigo (heredados de Producto).
 
-    public int getGramo() {
-        return gramo;
-    }
-
-    public void setGramo(int gramo) {
-        this.gramo = gramo;
-    }
-
-    public String getDesc() {
-        return desc;
-    }
-
-    public void setDesc(String desc) {
-        this.desc = desc;
-    }
-
-    public int getCodigo() {
-        return codigo;
-    }
-
-    public void setCodigo(int codigo) {
-        this.codigo = codigo;
-    }
-
-    
-    
+    // Método para calcular el precio del accesorio con base en el tipo de metal y peso en gramos.
     @Override
     public double getPrecio() {
         int gOro = 17300;
@@ -55,27 +24,29 @@ public class Accesorio extends Producto implements Interfas{
         int gMetal = 500;
         if (this.metal.equals("Acero")) {
             precio = precio + this.gramo * gMetal;
-        }if (this.metal.equals("Plata")) {
+        }
+        if (this.metal.equals("Plata")) {
             precio = precio + this.gramo * gPlata;
-        }if (this.metal.equals("Oro")) {
+        }
+        if (this.metal.equals("Oro")) {
             precio = precio + this.gramo * gOro;
         }
         return precio;
     }
-    
-    public void setPrecio(double precio) {
-        this.precio = precio;
-    }
 
+    // Método para mostrar la información del accesorio como cadena de texto.
     @Override
     public String toString() {
-        return "Accesorio: " + "Descripcion: "+ desc + " Precio: "+ precio+ " Metal: "+metal+ " Gramos: "+gramo + '.';
+        return "Accesorio: " + "Descripción: " + desc + " Precio: " + precio + " Metal: " + metal + " Gramos: " + gramo + '.';
     }
 
+    // Implementación del método aduana de la interfaz Interfas.
     @Override
     public void aduana() {
-        JOptionPane.showMessageDialog(null, this.precio+(this.precio*0.10));
+        JOptionPane.showMessageDialog(null, this.precio + (this.precio * 0.10));
     }
+
+    // Implementación del método ingreasr de la interfaz Interfas.
 
     @Override
     public void ingreasr() {
