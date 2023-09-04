@@ -1,16 +1,19 @@
 /*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
+ * Interfaz que define dos métodos para objetos que necesitan realizar acciones relacionadas con aduanas e ingresos.
  */
 package com.mycompany.poo_shop_on_line;
 
 /**
- *
- * @author CS07
+ * La interfaz Interfas define dos métodos que deben ser implementados por las clases que la utilicen.
  */
 public interface Interfas {
+    /**
+     * Este método representa una acción relacionada con la aduana.
+     */
     void aduana();
-    void ingreasr();
 
+    /**
+     * Este método representa una acción relacionada con ingresos.
+     */
+    void ingreasr();
 }
